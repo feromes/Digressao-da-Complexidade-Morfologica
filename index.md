@@ -1,1 +1,0 @@
-# Digressão da Complexdidade Morfológica
