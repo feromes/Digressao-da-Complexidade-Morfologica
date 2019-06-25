@@ -4,7 +4,7 @@ Trabalho Final de Graduação em Arquitetura e Urbanismo Apresentado ao Centro U
 
 <a href="https://feromes.github.io/Digressao-da-Complexidade-Morfologica/presentation/index_final.html" target="_blank">Abrir apresentação!</a>
 
-<a href="https://github.com/feromes/Digressao-da-Complexidade-Morfologica/blob/master/presentation/index_hackatona.html" target="_blank">Abrir apresentação da HACKATONA Geosampa!</a>
+<a href="https://feromes.github.io/Digressao-da-Complexidade-Morfologica/presentation/index_hackatona.html" target="_blank">Abrir apresentação da HACKATONA Geosampa!</a>
 
 <a href="https://github.com/feromes/Digressao-da-Complexidade-Morfologica/raw/master/prancha_final1.PDF" target="_blank">Download da prancha #1</a>
 
