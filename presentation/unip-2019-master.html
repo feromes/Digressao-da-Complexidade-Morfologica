@@ -1,0 +1,460 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Digressão da complexidade morfológica</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- modificando os estilos -->
+		<style>
+			.reveal section span.autor img { background:none; border:none; box-shadow: none;}
+			.reveal section span.autor {display: flex; }
+			.reveal section span.container {flex: 1; padding: 30px;}
+		</style>
+
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Bungee+Outline|Bungee+Shade|Cabin+Sketch|Carter+One|Fredericka+the+Great|Londrina+Outline|Londrina+Shadow|Londrina+Sketch|Love+Ya+Like+A+Sister|Maiden+Orange|Monoton|Special+Elite|Ubuntu|Ubuntu+Condensed|Ubuntu+Mono|Unkempt');
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1 style="font-family: 'Fredericka the Great', cursive; font-size: 2em">COMPLEXIDADE <br/>NA CIDADE:</h1>
+					<i style="font-family: 'Special Elite', cursive;">
+						O paradoxo dos índices urbanísticos
+					</i>
+					<p style="text-align: right; font-family: 'Special Elite', cursive;">
+						<small>por Fernando Gomes</small>
+					</p>
+					<p style="text-align: right; font-family: 'Special Elite', cursive;">
+						<small>Orientador: Prof. Dr. Leonardo Loyolla</small>
+					</p>
+				</section>
+
+				<section>
+					<img src="images/QrCode.svg" />
+					<p style="font-family: 'Special Elite', cursive;">
+						http://bit.ly/complexidademorfologica
+					</p>
+				</section>
+
+				<section>
+						<h2 style="font-family: 'Cabin Sketch', cursive;">#sumário</h2>
+						<span style="font-family: 'Cabin Sketch', cursive;">
+							<p>
+								#introdução {2 capítulos}
+							</p>
+							<p>
+								#justificativa {2 capítulos}
+							</p>
+							<p>
+								#objetivo
+							</p>
+							<p>
+								#método
+							</p>
+							<p>
+								#resultados
+							</p>
+							<p>
+								#considerações_finais
+							</p>
+							<p>
+								#referências, #apendices, #anexos, ...
+							</p>
+						</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#introdução {<span style="font-family: 'Londrina Sketch', cursive;">Que tipo de problema é a cidade?</span>}</h2>
+					<span class="autor">
+						<span class="container">
+							<img src="images/jane_jacobs.png" />
+						</span>
+						<span class="container">
+							<p style="font-family: 'Unkempt', cursive;">
+								"Esse livro é um ataque ..." (JACOBS, 1961, p. 1)
+							</p>
+							<p style="font-family: 'Unkempt', cursive;">
+								título do último capítulo
+							</p>
+							<p style="font-family: 'Unkempt', cursive;">
+								"Que tipo de problema é a cidade?"
+							</p>
+
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#introdução {<span style="font-family: 'Londrina Sketch', cursive;">Que tipo de problema é a cidade?</span>}</h2>
+					<span class="autor">
+						<span class="container">
+							<img src="images/jane_jacobs.png" />
+						</span>
+						<span class="container">
+
+							<p style="font-family: 'Unkempt', cursive;">
+								“Como as ciências biológicas, as cidades são problemas de complexidade organizada.” <br/>
+								(JACOBS, 1961, p. 482))
+							</p>
+
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#introdução {<span style="font-family: 'Londrina Sketch', cursive;">Que tipo de problema é a cidade?</span>}</h2>
+					<span class="autor">
+						<span class="container">
+							<img src="images/cristopher_alexander.png" />
+						</span>
+						<span class="container">
+							<small style="font-family: 'Unkempt', cursive;">
+								A cidade não é uma árvore. Não no sentido literal de galhos e folhas, mas no sentido abstrato de estrutura </br>(ALEXANDER, 1961)
+							</small>
+							<p>
+
+							</p>
+
+							<ul style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+								<li>
+									arquiteto, urbanista e matemático austríaco
+								</li>
+								<li>
+									4.000 páginas de textos publicados, além dos 13 livros escritos durante décadas de pesquisa
+								</li>
+								<li>
+									ementas das matérias dos cursos de arquitetura no Brasil?
+								</li>
+								<li>
+									"Uma linguagem de padrões"
+								</li>
+							</ul>
+
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<span class="autor">
+						<span class="container">
+							<img src="images/estruturas_alexander_w.png" />
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+									Diagrama produzido pelo próprio autor, referênciando a clássica comparação de Alexander (1961)
+								</small>
+							</span>
+						</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#introdução {<span style="font-family: 'Londrina Sketch', cursive;">complex(c)idade</span>}</h2>
+					<span class="autor">
+						<span class="container">
+							<img src="images/edgard_morin.png" />
+						</span>
+						<span class="container">
+							<small style="font-family: 'Unkempt', cursive;">
+								“Complexidade é um tecido (complexus: o que é tecido junto) de constituintes heterogêneas inseparavelmente associadas: ela coloca o paradoxo do uno e do múltiplo.” </br>
+								(MORIN, 2015, p. 13)
+							</small>
+
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#introdução {<span style="font-family: 'Londrina Sketch', cursive;">complex(c)idade</span>}</h2>
+					<span class="autor">
+						<span class="container">
+							<p style="font-family: 'Unkempt', cursive;">
+								“a cidade é a mais complexa das invenções humanas, … na confluência da natureza com o artefato”
+								<small>(LÉVI-STRAUSS, 1954, p. 137-138 apud MOUDON, 1997, p. 3)</small>
+							</p>
+
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<span class="autor">
+						<span class="container">
+							<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#justificativa {<span style="font-family: 'Londrina Sketch', cursive;">o paradoxo</span>}</h2>
+							<img src="images/area_de_zeu.png" style="width: 80%"/>
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.3em">
+									fonte: Próprio autor com dados do Geosampa. Áreas definidas como ZEU (Zonas Eixo de Estruturação da Transformação Urbana)  pelo PDE (Plano Diretor Estratégico). As ZEUs somadas equivalem a aproximadamente a área total de muitos municípios de São Paulo como Itapevi, Itaquaquecetuba e Vinhedo
+								</small>
+							</span>
+						</span>
+				</section>
+
+				<section>
+					<span class="autor">
+						<span class="container">
+							<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#justificativa {<span style="font-family: 'Londrina Sketch', cursive;">o paradoxo</span>}</h2>
+							<img src="images/diferenca_de_ca_c.png" style="width: 80%"/>
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.3em">
+									fonte: Próprio autor com base na legislação da PMSP. Salientando os resultados de adensamento construtivos em um terreno hipotético com testada de 7 metros a esquerda e com 14 metros a direita.
+								</small>
+							</span>
+						</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#justificativa {<span style="font-family: 'Londrina Sketch', cursive;">O paradoxo</span>}</h2>
+					<span class="autor">
+						<span class="container">
+							<img src="images/tabela_zeus.png" />
+							<p style="font-family: 'Special Elite', cursive; font-size: 0.3em">
+									fonte: Próprio autor com base dos dados georeferenciados do PDE no Geosampa.
+							</p>
+						</span>
+						<span class="container">
+							<img src="images/ca_to_gabarito.png" />
+							<p style="font-family: 'Special Elite', cursive; font-size: 0.3em">
+									fonte: produzido pelo autor com base na legislação da PMSP e potencial construtivo CA 4 em apenas uma torre com o mínimo gabarito necessário.
+							</p>
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#objetivo {<span style="font-family: 'Londrina Sketch', cursive;">diversidade, cade você? ...</span>}</h2>
+					<span class="autor">
+						<span class="container">
+							<img src="images/demolicao2.png" style="width: 100%"/>
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+									fonte: Google Street View em janeiro de 2015 a esquerda e fevereiro de 2018 a direita, na Rua Humberto I, altura do número 1005
+								</small>
+							</span>
+						</span>
+				</section>
+
+				<section style="font-size: 1.3em">
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#método {<span style="font-family: 'Londrina Sketch', cursive;"> ... eu vim aqui só pra te ver</span>}</h2>
+					<p>
+						<i style="font-family: 'Special Elite', cursive;">
+							&#128530; A forma <strike>segue a função</strike>
+						</i>
+					</p>
+					<p>
+						<i style="font-family: 'Special Elite', cursive;">
+							&#128525; A forma <b>contém informação</b>
+						</i>
+					</p>
+				</section>
+
+				<section>
+					<span class="autor">
+						<span class="container">
+							<p style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#método {<span style="font-family: 'Londrina Sketch', cursive;">taxonomia numérica</span>}</p>
+							<img src="images/metodo.png" style="scale: 0.8;"/>
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<span class="autor">
+						<span class="container">
+							<p style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#resultados {<span style="font-family: 'Londrina Sketch', cursive;">A morfologia da Vila Mariana</span>}</p>
+							<img src="images/diagrama_final.png" style="scale: 0.8;"/>
+						</span>
+					</span>
+				</section>
+
+				<section >
+					<p>
+						<i style="font-family: 'Special Elite', cursive;">
+							1,26 nonilhões (1,26 x 10<sup>30</sup>)
+						</i>
+					</p>
+					<p style="font-size: 1.3em">
+						<i style="font-family: 'Special Elite', cursive;">
+							1.260.000.000.000.<br/>
+							000.000.000.<br/>
+							000.000.000<br/>
+						</i>
+					</p>
+					<p>
+						<i style="font-family: 'Special Elite', cursive;">
+							&#128561; &#128561; &#128561;
+						</i>
+					</p>
+				</section>
+
+				<section>
+					<span class="autor">
+						<span class="container">
+							<p style="font-size: 1em">
+								<i style="font-family: 'Special Elite', cursive;">
+									Efeito Mega-Sena
+								</i>
+							</p>
+							<img src="images/mega.png" style="width: 35%"/>
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+									fonte: wikimedia.org, bilhete da Mega-Sena ilustrando o efeito que a ilusão estatística pode gerar.
+								</small>
+							</span>
+						</span>
+				</section>
+
+				<section>
+					<span class="autor">
+						<span class="container">
+								<img src="images/pizza.png" style="width: 100%"/>
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+									fonte: próprio autor, proporção numérica de grupos de tipos encontrados no distrito da Vila Mariana
+								</small>
+							</span>
+						</span>
+				</section>
+
+				<section>
+					<span class="autor">
+						<span class="container">
+								<img src="images/lego.png" style="width: 80%"/>
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+									fonte: wikimedia.org, peça de lego ilustrando o pequeno lote como um comoditie
+								</small>
+							</span>
+						</span>
+				</section>
+
+				<section>
+					<span class="autor">
+						<span class="container">
+								<img src="images/eixamples.png" style="width: 80%"/>
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+									fonte: GoogleMaps. Eixamples em Barcelona, Espanha. Detalhes para as quadras planejadas por Cerdrá, sem recuos laterais entre os edifícios.
+								</small>
+							</span>
+						</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">{<span style="font-family: 'Londrina Sketch', cursive;">para o equilíbrio, mudanças mínimas</span>}</h2>
+					<span class="autor">
+						<span class="container">
+								<img src="images/equilibrio.png" style="width: 80%"/>
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+									fonte: PopulumRH.com. Ilustração representando que pequenas variações podem reestabelecer ou comprometer o equilíbrio.
+								</small>
+							</span>
+						</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#resultados{<span style="font-family: 'Londrina Sketch', cursive;">morfologia com óculos de complexidade</span>}</h2>
+					<span class="autor">
+						<span class="container">
+								<img src="images/sombreamento.png" style="width: 80%"/>
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+									fonte: Próprio autor. Elevação esquemática do sombreamento gerado por dois edifícios na Vila Mariana, no período de um ano, no momento do dia em que o sol está mais alto. A esquerda um edifício proposto com 8 pavimentos sem recuos laterais e a direita um edifício com 14 pavimentos, recuado do lote vizinho por 3 metros conforme a legislação vigente.								</small>
+							</span>
+						</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#resultados{<span style="font-family: 'Londrina Sketch', cursive;">morfologia com óculos de complexidade</span>}</h2>
+					<span class="autor">
+						<span class="container">
+								<img src="images/estacionamento.gif" style="width: 100%"/>
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+									fonte: AutoEsporte (g1.com) "Inglês entra para o Guinness ao fazer baliza de ré mais apertada do mundo"</small>
+							</span>
+							<span class="container">
+									<img src="images/carro_vaga.png" style="width: 100%"/>
+									<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+										fonte: Proprio autor. Dimensão de uma vaga de veículo de passeio, ainda são necessários mais pelo menos 3 metros para o espaço de manobra, quano o ideal seriam mais 5 metros, totalizando 10 metros.</small>
+								</span>
+							</span>
+						</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#resultados{<span style="font-family: 'Londrina Sketch', cursive;">morfologia com óculos de complexidade</span>}</h2>
+					<span class="autor">
+						<span class="container">
+								<img src="images/vista_privilegiada.png" style="width: 80%"/>
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+									fonte: clickapartamentos.com.br. "Este empreendimento está sendo considerado uns dos mais interessantes de São Paulo. O Curitiba 381 mistura requinte e muita sofisticação em um só lugar. Situada em região nobre de São Paulo com vista privilegiada para o parque do Ibirapuera"</small>
+							</span>
+						</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#considerações_finais{<span style="font-family: 'Londrina Sketch', cursive;">... mudanças mínimas</span>}</h2>
+					<span class="autor">
+						<span class="container">
+								<img src="images/efeito_borboleta_w.png" style="width: 80%"/>
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+									fonte: mrlovenstein.com. Inspirado no efeito borboleta descoberto por Lorenz.</small>
+							</span>
+						</span>
+				</section>
+
+				<section>
+					<p style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#considerações finais {<span style="font-family: 'Londrina Sketch', cursive;">Praxis</span>}</p>
+					<span class="autor">
+						<span class="container">
+							<p style="font-family: 'Special Elite', cursive; font-size: 0.7em">
+									“não há revolução com verbalismo, nem tampouco com ativismo, mas com práxis, portanto, com reflexão e ação incidindo sobre as estruturas a serem transformadas” (FREIRE, 1987, p.122)							</p>
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<p style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#obrigado {<span style="font-family: 'Londrina Sketch', cursive;">@feromes</span>}</p>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+
+                multiplex: {
+	        	// To generate your own, see the socket.io server instructions.
+                    secret: '1570478170458506722', // Obtained from the socket.io server. Gives this (the master) control of the presentation
+                    id: '74fbdefae70e2703', // Obtained from socket.io server
+                    url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh' // Location of socket.io server
+                },
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true },
+                    { src: 'https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js', async: true },
+		            { src: 'plugin/multiplex/master.js', async: true }
+				],
+				minScale: 1,
+				maxScale: 5
+			});
+		</script>
+	</body>
+</html>
