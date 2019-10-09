@@ -32,6 +32,12 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<script
+		src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		crossorigin="anonymous"></script>
+
 	</head>
 	<body>
 		<div class="reveal">
@@ -77,7 +83,7 @@
 						</span>
 				</section>
 
-				<section>
+				<section id="terra_plana">
 					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#quiz {<span style="font-family: 'Londrina Sketch', cursive;">CIÊNCIA</span>}</h2>
 					<span class="autor">
 						<span class="container">
@@ -96,19 +102,22 @@
 
 							<ul style="font-family: 'Special Elite', cursive; font-size: 0.8em">
 								<li>
-									Plana
+									<a href="#terra_plana" onclick="vota({'votacao':'terra_plana', 'voto':'a'})">Plana <strong id="votos_a_terra_plana">0</strong></a> 
 								</li>
 								<li>
-									Redonda
+									<a href="#terra_plana" onclick="vota({'votacao':'terra_plana', 'voto':'b'})">Redonda <strong id="votos_b_terra_plana"></strong></a> 
+									
 								</li>
 								<li>
-									Esférica
+									<a href="#terra_plana" onclick="vota({'votacao':'terra_plana', 'voto':'c'})">Esférica <strong id="votos_c_terra_plana"></strong></a> 
+									
 								</li>
 								<li>
-									N.D.A
+									<a href="#terra_plana" onclick="vota({'votacao':'terra_plana', 'voto':'d'})">N.D.A <strong id="votos_d_terra_plana"></strong></a> 
+									
 								</li>
 								<li>
-									... &#128533; &#129300;
+									<a href="#terra_plana" onclick="vota({'votacao':'terra_plana', 'voto':'e'})">... &#128533; &#129300; <strong id="votos_e_terra_plana"></strong></a> 
 								</li>
 							</ul>
 
@@ -126,10 +135,14 @@
 							</small>
 						</span>
 						<span class="container">
-							<small style="font-family: 'Unkempt', cursive; font-size: 0.9em">
-									“Arquitetura e consequentemente, o Urbanismo é a ciência que estuda o habitat humano em toda a sua complexidade, para todas as escalas: do objeto à megalópole, onde quer que um humano habite”<br/>
-									(GOMES, 2019, p.6)
+							<small style="font-family: 'Unkempt', cursive; font-size: 0.6em">
+								“Arquitetura e consequentemente, o Urbanismo é a ciência que estuda o habitat humano em toda a sua complexidade, para todas as escalas: do objeto à megalópole, onde quer que um humano habite”<br/>
+								(GOMES, 2019, p.6)
 							</small>
+							<span class="container" style="font-family: 'Unkempt', cursive; font-size: 0.6em; text-align: left">
+								<p><strong>00</strong> arquitetos e urbanistas</p>
+								<p><strong>00</strong> "pessoas normais"</p>
+							</span>
 						</span>
 					</span>
 				</section>
@@ -624,6 +637,7 @@
 		</div>
 
 		<script src="js/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
 		<script>
 			// More info about config & dependencies:
@@ -649,6 +663,26 @@
 				minScale: 1,
 				maxScale: 5
 			});
+
+			var socket = io("http://localhost:3000");
+			var votacoes = ['terra_plana', 'outra_votacao'];
+
+			socket.on('resultado', function(votacoes){
+				//console.log(votacoes);
+				$.each(votacoes, function(key, value){
+				$('#votos_' + 'a' + '_' + key).text(value.a);
+				$('#votos_' + 'b' + '_' + key).text(value.b);
+				$('#votos_' + 'c' + '_' + key).text(value.c);
+				$('#votos_' + 'd' + '_' + key).text(value.d);
+				$('#votos_' + 'e' + '_' + key).text(value.e);
+				})
+			})
+
+			function vota(voto) {
+				socket.emit('vota', voto);
+			}
+			
+
 		</script>
 	</body>
 </html>
