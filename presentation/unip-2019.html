@@ -32,55 +32,132 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<script
+		src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		crossorigin="anonymous"></script>
+
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h1 style="font-family: 'Fredericka the Great', cursive; font-size: 2em">COMPLEXIDADE <br/>NA CIDADE:</h1>
+					<h1 style="font-family: 'Fredericka the Great', cursive; font-size: 2em">COMPLEXIDADE <br/>E ARQUITETURA:</h1>
 					<i style="font-family: 'Special Elite', cursive;">
-						O paradoxo dos índices urbanísticos
+						Desvendando a inteligência coletiva construída na cidade
 					</i>
 					<p style="text-align: right; font-family: 'Special Elite', cursive;">
 						<small>por Fernando Gomes</small>
-					</p>
-					<p style="text-align: right; font-family: 'Special Elite', cursive;">
-						<small>Orientador: Prof. Dr. Leonardo Loyolla</small>
 					</p>
 				</section>
 
 				<section>
 					<img src="images/QrCode.svg" />
 					<p style="font-family: 'Special Elite', cursive;">
-						http://bit.ly/complexidademorfologica
+						http://bit.ly/mudaresseendereco
 					</p>
 				</section>
 
 				<section>
-						<h2 style="font-family: 'Cabin Sketch', cursive;">#sumário</h2>
+						<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#quem_eu_sou {<span style="font-family: 'Londrina Sketch', cursive;">Fernando Gomes</span>}</h2>
 						<span style="font-family: 'Cabin Sketch', cursive;">
 							<p>
-								#introdução {2 capítulos}
+								#um ser imcompleto, em formação, &#8734;
 							</p>
 							<p>
-								#justificativa {2 capítulos}
+								#programador desde 1985, 8 anos {faça as contas}
 							</p>
 							<p>
-								#objetivo
+								#empreendedor, 1994
 							</p>
 							<p>
-								#método
+								#analista de sistemas, 1998
 							</p>
 							<p>
-								#resultados
+								#depressão, 2012
 							</p>
 							<p>
-								#considerações_finais
-							</p>
-							<p>
-								#referências, #apendices, #anexos, ...
+								#arquiteto e urbanista -> premio -> prefeitura, 2019
 							</p>
 						</span>
+				</section>
+
+				<section id="terra_plana">
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#quiz {<span style="font-family: 'Londrina Sketch', cursive;">CIÊNCIA</span>}</h2>
+					<span class="autor">
+						<span class="container">
+							<img src="images/terra.png" />
+							<small style="font-family: 'Unkempt', cursive; font-size: 0.4em">
+								Essa imagem, dessa forma só foi vista a partir de 1968
+							</small>
+						</span>
+						<span class="container">
+							<small style="font-family: 'Unkempt', cursive; font-size: 1em">
+								Qual o formato da terra?
+							</small>
+							<p>
+
+							</p>
+
+							<ul style="font-family: 'Special Elite', cursive; font-size: 0.8em">
+								<li>
+									<a href="#terra_plana" onclick="vota({'votacao':'terra_plana', 'voto':'a'})">Plana <strong id="votos_a_terra_plana">0</strong></a> 
+								</li>
+								<li>
+									<a href="#terra_plana" onclick="vota({'votacao':'terra_plana', 'voto':'b'})">Redonda <strong id="votos_b_terra_plana"></strong></a> 
+									
+								</li>
+								<li>
+									<a href="#terra_plana" onclick="vota({'votacao':'terra_plana', 'voto':'c'})">Esférica <strong id="votos_c_terra_plana"></strong></a> 
+									
+								</li>
+								<li>
+									<a href="#terra_plana" onclick="vota({'votacao':'terra_plana', 'voto':'d'})">N.D.A <strong id="votos_d_terra_plana"></strong></a> 
+									
+								</li>
+								<li>
+									<a href="#terra_plana" onclick="vota({'votacao':'terra_plana', 'voto':'e'})">... &#128533; &#129300; <strong id="votos_e_terra_plana"></strong></a> 
+								</li>
+							</ul>
+
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#hipótese {<span style="font-family: 'Londrina Sketch', cursive;">geóide disforme | <br/>arquitetura é ciência também</span>}</h2>
+					<span class="autor">
+						<span class="container">
+							<img src="images/geoide.png" style="width: 70%" />
+							<small style="font-family: 'Unkempt', cursive; font-size: 0.4em">
+								Fonte: Agência Espacial Europeia, baseado em imagens do satélite Goce considerando a gravidade do geoide sem a ação de marés e de correntes ocêanicas. 2011
+							</small>
+						</span>
+						<span class="container">
+							<small style="font-family: 'Unkempt', cursive; font-size: 0.6em">
+								“Arquitetura e consequentemente, o Urbanismo é a ciência que estuda o habitat humano em toda a sua complexidade, para todas as escalas: do objeto à megalópole, onde quer que um humano habite”<br/>
+								(GOMES, 2019, p.6)
+							</small>
+							<span class="container" style="font-family: 'Unkempt', cursive; font-size: 0.6em; text-align: left">
+								<p><strong>00</strong> arquitetos e urbanistas</p>
+								<p><strong>00</strong> "pessoas normais"</p>
+							</span>
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">{<span style="font-family: 'Londrina Sketch', cursive;">AVISO LEGAL</span>}</h2>
+					<span style="font-family: 'Cabin Sketch', cursive;">
+						<p>
+							A única verdade absoluta dessa apresentação é que ela não contém nenhuma verdade absoluta
+						</p>
+						<div>
+							<input type="checkbox" id="agree" name="agree" unchecked>
+							<label style="font-family: 'Cabin Sketch', cursive; font-size: 0.3em" for="agree">Concordo com os termos da frase acima</label>
+						  </div>
+					</span>
 				</section>
 
 				<section>
@@ -189,7 +266,6 @@
 								“a cidade é a mais complexa das invenções humanas, … na confluência da natureza com o artefato”
 								<small>(LÉVI-STRAUSS, 1954, p. 137-138 apud MOUDON, 1997, p. 3)</small>
 							</p>
-
 						</span>
 					</span>
 				</section>
@@ -197,11 +273,56 @@
 				<section>
 					<span class="autor">
 						<span class="container">
-							<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#justificativa {<span style="font-family: 'Londrina Sketch', cursive;">o paradoxo</span>}</h2>
+							<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#complexa != <span style="font-family: 'Londrina Sketch', cursive;">COMPLICADA</span></h2>
+							<img src="images/fundacao_louis_vuitton.jpg" style="width: 80%"/>
+							<small style="font-family: 'Special Elite', cursive; font-size: 0.3em">
+								fonte: Word Art Foundations, edifício da Fundação Louis Vuitton, projetada por Frank Ghery, inaugurada em 2014, Jardin d'Acclimatation, Paris, França
+							</small>
+							<p style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+								3.850 m2 | €780.000.000 | €202.500/m2 | R$ 900.000,00 por m2
+							</p>
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<span class="autor">
+						<span class="container">
+							<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#determinismo == <span style="font-family: 'Londrina Sketch', cursive;">🙈🙈🙈</span></h2>
+							<img src="images/frank_finger.jpg" style="width: 80%"/>
+							<small style="font-family: 'Special Elite', cursive; font-size: 0.3em">
+								fonte: Frank Ghery reagindo em entrevista após ser perguntado se sua própria arquitetura não era apenas espetáculo. Ele mesmo descreveu que 98% da arquitetura moderna seria "merda" 💩💩💩
+							</small>
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<span class="autor">
+						<span class="container">
+							<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#complexidade {<span style="font-family: 'Londrina Sketch', cursive;">falta de vocação para enxerga-la</span>}</h2>
+							<img src="images/favela_morumbi.jpg" style="width: 80%"/>
+							<small style="font-family: 'Special Elite', cursive; font-size: 0.3em">
+								fonte: Amplamente divulgada de revistas dominicais a grupos do WhatsApp. Qual seria sua legenda?
+							</small>
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#recorte {<span style="font-family: 'Londrina Sketch', cursive;">Vila Mariana</span>}</h2>
+					<span class="autor">
+						<span class="container">
 							<img src="images/area_de_zeu.png" style="width: 80%"/>
 								<small style="font-family: 'Special Elite', cursive; font-size: 0.3em">
 									fonte: Próprio autor com dados do Geosampa. Áreas definidas como ZEU (Zonas Eixo de Estruturação da Transformação Urbana)  pelo PDE (Plano Diretor Estratégico). As ZEUs somadas equivalem a aproximadamente a área total de muitos municípios de São Paulo como Itapevi, Itaquaquecetuba e Vinhedo
 								</small>
+							</span>
+							<span class="container">
+								<img src="images/tabela_zeus.png" />
+								<p style="font-family: 'Special Elite', cursive; font-size: 0.3em">
+										fonte: Próprio autor com base dos dados georeferenciados do PDE no Geosampa.
+								</p>
 							</span>
 						</span>
 				</section>
@@ -211,27 +332,9 @@
 						<span class="container">
 							<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#justificativa {<span style="font-family: 'Londrina Sketch', cursive;">o paradoxo</span>}</h2>
 							<img src="images/diferenca_de_ca_c.png" style="width: 80%"/>
-								<small style="font-family: 'Special Elite', cursive; font-size: 0.3em">
-									fonte: Próprio autor com base na legislação da PMSP. Salientando os resultados de adensamento construtivos em um terreno hipotético com testada de 7 metros a esquerda e com 14 metros a direita.
-								</small>
-							</span>
-						</span>
-				</section>
-
-				<section>
-					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#justificativa {<span style="font-family: 'Londrina Sketch', cursive;">O paradoxo</span>}</h2>
-					<span class="autor">
-						<span class="container">
-							<img src="images/tabela_zeus.png" />
-							<p style="font-family: 'Special Elite', cursive; font-size: 0.3em">
-									fonte: Próprio autor com base dos dados georeferenciados do PDE no Geosampa.
-							</p>
-						</span>
-						<span class="container">
-							<img src="images/ca_to_gabarito.png" />
-							<p style="font-family: 'Special Elite', cursive; font-size: 0.3em">
-									fonte: produzido pelo autor com base na legislação da PMSP e potencial construtivo CA 4 em apenas uma torre com o mínimo gabarito necessário.
-							</p>
+							<small style="font-family: 'Special Elite', cursive; font-size: 0.3em">
+								fonte: Próprio autor com base na legislação da PMSP. Salientando os resultados de adensamento construtivos em um terreno hipotético com testada de 7 metros a esquerda e com 14 metros a direita.
+							</small>
 						</span>
 					</span>
 				</section>
@@ -263,6 +366,58 @@
 				</section>
 
 				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#linguagem {<span style="font-family: 'Londrina Sketch', cursive;">COMPLEXIDADE ==> MATEMÁTICA</span>}</h2>
+					<span class="autor">
+						<span class="container">
+							<img src="images/benoit_mandelbrot.jpg" style="width: 100%"/>
+							<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+								Benoit Mandelbrot, matemático francês, nascido em 1924, falecido em 2010, fez seu grande descobrimento científico com mais de 50 anos 
+							</small>
+						</span>
+						<span class="container">
+							<p style="font-family: 'Unkempt', cursive;">
+								“A Matemática, sendo uma linguagem,	serve não só para informar, mas também para seduzir …”<br/>
+								(MANDELBROT, 1991, p. 26)
+							</p>
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">... {<span style="font-family: 'Londrina Sketch', cursive;">MATEMÁTICA ==> 😈😈😈</span>}</h2>
+					<span class="autor">
+						<span class="container">
+							<p style="font-family: 'Unkempt', cursive;">
+								... porém, frequentemente a matemática é usada para aterrorizar!
+							</p>
+						</span>
+						<span class="container">
+							<img src="images/momo.jpg" style="width: 100%"/>
+							<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+								Fonte: Cultura da internet, mais conhecida como meme, nesse caso a Momo
+							</small>
+						</span>
+					</span>
+				</section>
+
+				<section >
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#GeoSampa {<span style="font-family: 'Londrina Sketch', cursive;">Município de São Paulo</span>}</h2>
+					<p style="font-size: 1.3em">
+						<i style="font-family: 'Special Elite', cursive;">
+							2.817.744 edificações <br/>
+							1.986.084 lotes<br/>
+							96 distritos<br/>
+							e muito mais ... (Lidar 3D em breve!)
+						</i>
+					</p>
+					<p>
+						<i style="font-family: 'Special Elite', cursive;">
+							&#128525; &#128525; &#128525;
+						</i>
+					</p>
+				</section>
+
+				<section>
 					<span class="autor">
 						<span class="container">
 							<p style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#método {<span style="font-family: 'Londrina Sketch', cursive;">taxonomia numérica</span>}</p>
@@ -276,6 +431,42 @@
 						<span class="container">
 							<p style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#resultados {<span style="font-family: 'Londrina Sketch', cursive;">A morfologia da Vila Mariana</span>}</p>
 							<img src="images/diagrama_final.png" style="scale: 0.8;"/>
+						</span>
+					</span>
+				</section>
+
+				<section>
+					<h2 style="font-family: 'Cabin Sketch', cursive; font-size: 1em">#complexidade {<span style="font-family: 'Londrina Sketch', cursive;">padrões, o que faz sentido?</span>}</h2>
+					<span class="autor">
+						<span class="container">
+							<img src="images/100points.png" />
+						</span>
+						<span class="container">
+							<small style="font-family: 'Unkempt', cursive; font-size: 1em">
+								Quantas possibilidades de agrupamento de 100 pontos?
+							</small>
+							<p>
+
+							</p>
+
+							<ul style="font-family: 'Special Elite', cursive; font-size: 0.8em">
+								<li>
+									1 milhão (1 x 10<sup>6</sup>)
+								</li>
+								<li>
+									1 bilhão (1 x 10<sup>9</sup>)
+								</li>
+								<li>
+									1 trilhão (1 x 10<sup>12</sup>)
+								</li>
+								<li>
+									1 quatrilhão (1 x 10<sup>15</sup>)
+								</li>
+								<li>
+									... &#128533; &#129300;
+								</li>
+							</ul>
+
 						</span>
 					</span>
 				</section>
@@ -303,6 +494,17 @@
 				<section>
 					<span class="autor">
 						<span class="container">
+								<img src="images/pizza.png" style="width: 100%"/>
+								<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+									fonte: próprio autor, proporção numérica de grupos de tipos encontrados no distrito da Vila Mariana
+								</small>
+							</span>
+						</span>
+				</section>
+				
+				<section>
+					<span class="autor">
+						<span class="container">
 							<p style="font-size: 1em">
 								<i style="font-family: 'Special Elite', cursive;">
 									Efeito Mega-Sena
@@ -319,12 +521,17 @@
 				<section>
 					<span class="autor">
 						<span class="container">
-								<img src="images/pizza.png" style="width: 100%"/>
-								<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
-									fonte: próprio autor, proporção numérica de grupos de tipos encontrados no distrito da Vila Mariana
-								</small>
-							</span>
+							<p style="font-size: 1em">
+								<i style="font-family: 'Special Elite', cursive;">
+									Efeito Bacurau
+								</i>
+							</p>
+							<img src="images/bacurau.gif" style="width: 75%"/>
+							<small style="font-family: 'Special Elite', cursive; font-size: 0.5em">
+								fonte: obrigatória: Assistir Bacurau!
+							</small>
 						</span>
+					</span>
 				</section>
 
 				<section>
@@ -430,6 +637,7 @@
 		</div>
 
 		<script src="js/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
 		<script>
 			// More info about config & dependencies:
@@ -455,6 +663,26 @@
 				minScale: 1,
 				maxScale: 5
 			});
+
+			var socket = io("http://localhost:3000");
+			var votacoes = ['terra_plana', 'outra_votacao'];
+
+			socket.on('resultado', function(votacoes){
+				//console.log(votacoes);
+				$.each(votacoes, function(key, value){
+				$('#votos_' + 'a' + '_' + key).text(value.a);
+				$('#votos_' + 'b' + '_' + key).text(value.b);
+				$('#votos_' + 'c' + '_' + key).text(value.c);
+				$('#votos_' + 'd' + '_' + key).text(value.d);
+				$('#votos_' + 'e' + '_' + key).text(value.e);
+				})
+			})
+
+			function vota(voto) {
+				socket.emit('vota', voto);
+			}
+			
+
 		</script>
 	</body>
 </html>
